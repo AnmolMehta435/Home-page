@@ -5,6 +5,12 @@ const NOW = new Date();
 const SITE_YEAR = NOW.getFullYear();
 const SITE_DATE = NOW.toLocaleString('en-US', { month: 'short', year: 'numeric' });
 
+const BRAND = {
+  name: 'Ars Architects',
+  mark: 'AA',
+  email: 'hello@arsarchitects.studio',
+};
+
 const NAV = ['Work', 'Studio', 'Process', 'Journal', 'Contact'];
 
 const PARTNERS = [
@@ -58,7 +64,7 @@ const JOURNAL = [
 ];
 
 const STUDIO_STATS = {
-  builtProjects: 52,
+  builtProjects: 452,
   countries: 14,
   awards: 8,
 };
@@ -240,8 +246,8 @@ export default function Home() {
 
       <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
         <a href="#" className="logo">
-          <span className="logo__mark">AF</span>
-          <span className="logo__text">Atelier Form</span>
+          <span className="logo__mark">{BRAND.mark}</span>
+          <span className="logo__text">{BRAND.name}</span>
         </a>
         <button
           type="button"
@@ -426,7 +432,7 @@ export default function Home() {
             <p className="label">Studio</p>
             <h2>Quiet rigor, warm materiality</h2>
             <p>
-              Founded in 2012, Atelier Form works from studios in Berlin and Montreal.
+              Founded in 2012, {BRAND.name} works from studios in Berlin and Montreal.
               We partner with clients who value craft, longevity, and clarity over trend.
             </p>
             <ul className="pill-list">
@@ -510,7 +516,7 @@ export default function Home() {
           />
           <blockquote>
             <p>
-              “Atelier Form translated a vague brief into a home we didn’t know we needed.
+              “{BRAND.name} translated a vague brief into a home we didn’t know we needed.
               Every corner feels considered.”
             </p>
             <footer>
@@ -562,7 +568,7 @@ export default function Home() {
         <div className="container footer__main reveal">
           <div>
             <h2>Start a conversation</h2>
-            <p>hello@atelierform.studio</p>
+            <p>{BRAND.email}</p>
             <p>+1 (555) 012-3456 · Berlin · Montreal</p>
           </div>
           <form className="footer__form" onSubmit={(e) => e.preventDefault()}>
@@ -570,7 +576,7 @@ export default function Home() {
             <button type="submit" className="btn btn--light">Subscribe</button>
           </form>
         </div>
-        <p className="footer__copy reveal">© {SITE_YEAR} Atelier Form · Demo site with placeholder images</p>
+        <p className="footer__copy reveal">© {SITE_YEAR} {BRAND.name} · Demo site with placeholder images</p>
       </footer>
     </div>
   );
